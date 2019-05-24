@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class Main2Activity : AppCompatActivity() {
 
@@ -21,8 +22,9 @@ class Main2Activity : AppCompatActivity() {
             text.setText(i.getStringExtra("name"))
 
             button.setOnClickListener{
+                val s:String=text.text.toString()
             val i=Intent(Intent.ACTION_CALL)
-            i.setData(Uri.parse("tel:1234567890"))
+            i.setData(Uri.parse("tel:"+s))
             startActivity(i)
             }
         }
